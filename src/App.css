@@ -1,38 +1,439 @@
 .App {
   text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;400&family=Poppins:wght@400;500;600&display=swap');
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 3px 14px rgba(190.19,190.19, 190.19, 0.30); 
+  border-radius: 20px;
+  width: 595px;
+  margin: 35px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.formQuestion{
+  opacity: 1;
+  animation: fadeIn 1s linear;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.question {
+  padding: 1.2rem 0;
+  font-size: 20;
+  font-family: 'Poppins';
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+small{
+  color: #979797;
+}
+.field{
+  margin-bottom: 1px;
+}
+.ant-select-selection-search {
+  width: 500px;
+  padding: 2rem !important;
+}
+.ant-select-item:hover, .ant-select-item-option:hover, .ant-select-item:focus, .ant-select-item-option:focus{
+  background: #9C4DE2 !important;
+  color: #FFF;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.label{
+  font-size: 20px;
+  color: black;
+  line-height: 22.80px;
+  font-family: 'Poppins'; 
+  font-weight: 600; 
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.formTitle {
+  padding: 1.2rem 1.5rem;
+  background-color: #D0F7FA;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  text-align: left;
+  font-size: 25px; 
+  font-family: 'Poppins'; 
+  font-weight: 600; 
+  line-height: 28.50px; 
+  word-wrap: break-word;
+}
+.fields{
+  padding: 1.5rem 1rem;
+  margin-bottom: .5rem;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+  margin-bottom: 25px;
+}
+.dinamic{
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 10px;
+}
+.disq{
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem;
+  font-family: 'Poppins';
+  text-align: left;
+}
+.choice-input{
+  width: 100%;
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 10px;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 96%;
+}
+.title {
+  font-size: 20px;
+  color: black;
+  line-height: 22.80px;
+  font-family: 'Poppins'; 
+  font-weight: 600; 
+  margin-bottom: 20px;
+  /* margin-right: 10rem; */
+}
+.video {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  margin-left: -10px;
+  gap: 20px;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.row input {
+  width: 200px;
+}
+.ant-input-number, .ant-input-number-lg{
+  width: 250px !important;
+}
+.form-inputs{
+  display: flex;
+  padding: .5rem;
+  line-height: 2.5rem;
+  align-items: flex-start;
+  gap: 2rem;
+}
+.internal {
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.5rem; /* 160% */
+}
+
+.hide{
+  color: #666;
+  font-family: Noto Sans;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.5rem;
+  margin-left: -1.5rem;
+  margin-top: -.5rem;
+}
+
+.line23{
+  width: 517px; 
+  height: 0px; 
+  border: 0.5px #C4C4C4 solid
+}
+
+.small{
+  font-size: 1rem;
+  font-weight: 200;
+}
+.upload-content{
+  padding: 3.5rem 2.5rem;
+}
+.upload-wrapper{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.3125rem;
+  border: 1px dashed #000;
+  box-shadow: 3px 3px 9px 0px rgba(190, 190, 190, 0.13);
+}
+.upload-label{
+  color: 'black';
+  font-size: 1rem;
+  font-family: 'Poppins';
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.upload-msg{
+  color: #979797;
+  font-size: 1rem;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+.custom-file-upload {
+  width: 33px;
+  height: 33px;
+  cursor: pointer;
+  background: url('./upload.png'), rgb(255, 255, 255) 50% / cover no-repeat;
+  background-size:contain ;
+  background-repeat: no-repeat;
+  color: #fff;
+  margin-bottom: 5px;
+}
+.custom-file-upload input[type="file"] {
+  display: none;
+}
+.add-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding: 2rem 1.5rem;
+  cursor: pointer;
+}
+
+.add-choice{
+  padding: 1.2rem;
+}
+.plus-sign{
+  position: absolute;
+  bottom: 3rem;
+  transform: scale(0.7);
+  cursor: pointer;
+}
+.choice {
+  transform: scale(.33);
+  bottom: 1.3rem;
+  left: .5rem ;
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.delete {
+  width: 150px;
+}
+.delete-sign {
+  transform: rotate(45deg) scale(.4);
+}
+.delete-sign .vertical, .delete-sign .horizontal{
+  background: red;
+   border: 5px red solid;
+}
+.bottom .add-text{
+  color: red;
+  bottom: 1rem;
+  left: 3rem;
+  width: fit-content;
+  margin: 10px;
+}
+.save button {
+  background-color: #0ad145;
   color: white;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 1rem;
+  font-family: 'Poppins';
+  cursor: pointer;
+  position: relative;
+  right: 1rem;
+  bottom: .5rem;
+  border-radius: 10%;
 }
 
-.App-link {
-  color: #61dafb;
+.save button:hover {
+  background-color: #49f07b;
+}
+.vertical{
+   width: 2.5rem;
+   height: .1rem;
+   position: absolute;
+   transform: rotate(90deg);
+   background: black;
+   border: 5px black solid;
+}
+.horizontal{
+  width: 2.5rem;
+  height: .1rem;
+  position: absolute;
+  transform: rotate(180deg);
+  background: black;
+  border: 5px black solid;
 }
 
-@keyframes App-logo-spin {
-  from {
+.add-text{
+  font-size: 15;
+  font-weight: 600;
+  font-family: 'Poppins';
+  position: absolute;
+  bottom: 3.3rem;
+  left: 6rem;
+}
+.div-switch{
+  display: flex;
+  justify-content: space-between;
+}
+
+.top-part{
+  display: flex;
+  
+}
+input[type='checkbox'] {
+  border: none;
+  outline: none;
+}
+.normal-checkbox{
+  width: 1.125rem;
+  height: 1.125rem;
+  position: relative;
+  display: inline-block;
+  border-radius: 0.25rem;
+  border: 1px solid #D4D9E4;
+  background: #FFF;
+}
+
+.normal-checkbox input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input:checked + .square::before{
+  position: absolute;
+  cursor: pointer;
+  content: "&#x2705;" ;
+
+}
+
+
+.square {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+input:checked + .square {
+  background-color: #0ad145;
+}
+
+input:focus + .square {
+  box-shadow: 0 0 1px #0ad145;
+}
+
+
+/* switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 31px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #0ad145;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #0ad145;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(23px);
+  -ms-transform: translateX(23px);
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 30px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+@keyframes spinner {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3; /* Light grey */
+  border-top: 10px solid #3e92ff; /* Black */
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
 }
